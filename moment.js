@@ -1,5 +1,6 @@
 var currentDay = $('#currentDay');
 
+
 function checkHours(){
 
     var theHour = moment().format('H')
@@ -25,18 +26,24 @@ setInterval(() => {
         var now = moment();
         var formatting = now.format('MMMM Do YYYY, h:mm:ss a');
         currentDay.text(formatting);
+        
     }, 1000);
     
 }
 
 
+$('#btn-9').on('click', function(){
+    var event = $('#9').val().trim();
 
+    console.log(event);
+    localStorage.setItem('Event', event);
+})
 
 
 $(document).ready(function(){
     timeUpdate();
+    checkHours();
     
-checkHours()
 
  });
 
